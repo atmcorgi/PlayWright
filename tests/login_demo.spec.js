@@ -57,38 +57,11 @@ test("Test login Phenikaa canvas", async ({ page }) => {
   await page
     .locator("button.Button.Button--primary.submit_assignment_link")
     .click();
-  //
-  await page.click('a:has-text("Assignments")');
-  await page.click(
-    'a[href="https://canvas.phenikaa-uni.edu.vn/courses/10837/assignments/79917"]'
-  );
 
-  await page
-    .locator("button.Button.Button--primary.submit_assignment_link")
-    .click();
-
-  await page.waitForSelector('input[type="text"][name="submission[url]"]', {
-    timeout: 10000,
-  });
-  await page
-    .locator('input[type="text"][name="submission[url]"]')
-    .fill("https://github.com");
-  //
-
-  await page.click('a:has-text("Assignments")');
-  await page
-    .locator(
-      'a.ig-title:has-text("Sử dụng công cụ Playwright để kiểm thử web tự động")'
-    )
-    .click();
-  await page
-    .locator("button.Button.Button--primary.submit_assignment_link")
-    .click();
-
-  await page
-    .locator('input[type="text"][name="submission[url]"]')
-    .fill("https://github.com/atmcorgi/PlayWright.git");
-  await page.click("button.btn.btn-primary");
+  // await page
+  //   .locator('input[type="text"][name="submission[url]"]')
+  //   .fill("https://github.com/atmcorgi/PlayWright.git");
+  // await page.click("button.btn.btn-primary");
 
   await page.pause();
 });
